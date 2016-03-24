@@ -1,0 +1,129 @@
+@import "compass/css3"
+
+$seedly-base: #55ccfc
+$seedly-text: #ffffff
+
+@mixin animation-keyframes
+  $animation-name: unique-id()
+  animation-name: $animation-name
+
+  @keyframes #{$animation-name}
+    @content
+
+body
+  background-color: $seedly-base
+  color: $seedly-text
+  font-family: 'Helvetica Neue', Arial, sans-serif
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  height: 100vh
+  font-size: 16px
+  line-height: 2em
+  padding: 0
+  margin: 0
+  -webkit-font-smoothing: antialiased
+
+.thanks
+  position: relative
+  display: flex
+  justify-content: center
+  align-content: center
+  width: 100vw
+  flex-basis: 4rem
+  padding: 2em 0
+  margin: 1em 0
+  min-height: 1em
+
+.letter
+  background-color: white
+  min-width: 400px
+  color: #222222
+  padding: 1em 2em
+  line-height: 2em
+  max-width: 800px
+  text-align: center
+
+  p
+    margin: 2em 0
+
+h1
+  font-size: 4rem
+  line-height: 1em
+  min-height: 1em
+  font-weight: 800
+  z-index: 2
+  @include animation(boing 1s ease-in-out 0s 1)
+  padding: 0
+  margin: 0 auto
+  transform-origin: 50% 50%
+  text-align: center
+
+h2
+  position: relative
+  visibility: none
+
+.text-bg
+  color: gold
+  position: absolute
+  vertical-align: middle
+  left: 50%
+  top: 40%
+  z-index: 1
+  font-size: 24px
+
+@keyframes boing
+  0%
+    @include transform(rotate(0deg) scale3d(1, 1))
+  30%
+    @include transform(rotate(-20deg) scale(1.5, 1.5))
+
+// Indebted to: http://advancedsass.com/articles/simplify-animation-keyframes-with-unique-id.html
+@for $i from 1 through 5
+  .fa.fa-star:nth-of-type(#{$i})
+    @include animation(0.5s + (0.1 * $i * random(5)) ease-in-out 0s 1 forwards)
+    @include transform(scale(random(10) * $i * 0.1))
+    @include animation-keyframes
+      0%
+        opacity: 1
+        @include transform(translateX(0px) rotate(0deg) translateY(0px))
+      100%
+        opacity: 0
+        @include transform(translateX(20px * $i - 20px - random(20) + random(20)) translateY(20px * $i - random(20) + random(20)))
+
+@for $i from 6 through 10
+  .fa.fa-star:nth-of-type(#{$i})
+    @include animation(0.5s + (0.1 * $i * random(5)) ease-in-out 0s 1 forwards)
+    @include transform(scale(random(10) * $i * 0.1))
+    @include animation-keyframes
+      0%
+        opacity: 1
+        @include transform(translateX(0px) rotate(0deg) translateY(0px))
+      100%
+        opacity: 0
+        @include transform(translateX(20px * $i/2 - 20px - random(20) + random(20)) translateY(0 - 20px * $i/2 - random(20) + random(20)))
+
+@for $i from 11 through 15
+  .fa.fa-star:nth-of-type(#{$i})
+    @include animation(0.1s + (0.1 * $i/2 * random(5)) ease-in-out 0s 1 forwards)
+    @include transform(scale(random(10) * $i * 0.1))
+    @include animation-keyframes
+      0%
+        opacity: 1
+        @include transform(translateX(0px) rotate(0deg) translateY(0px))
+      100%
+        opacity: 0
+        @include transform(translateX(0px - 20px * $i/2 - 20px - random(20) + random(20)) translateY(0 - 20px * $i/2 - random(20) + random(20)))
+
+@for $i from 16 through 20
+  .fa.fa-star:nth-of-type(#{$i})
+    @include animation(0.1s + (0.1 * $i/2 * random(5)) ease-in-out 0s 1 forwards)
+    @include transform(scale(random(10) * $i * 0.1))
+    @include animation-keyframes
+      0%
+        opacity: 1
+        @include transform(translateX(0px) rotate(0deg) translateY(0px))
+      100%
+        opacity: 0
+        @include transform(translateX(0px - 20px * $i/2 - 20px - random(20) + random(20)) translateY(20px * $i/3 - random(20) + random(20)))
