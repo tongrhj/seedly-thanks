@@ -6,12 +6,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   font-size: 16px;
   line-height: 2em;
   padding: 0;
   margin: 0;
   -webkit-font-smoothing: antialiased;
+  opacity: 0;
 }
 
 .thanks {
@@ -23,17 +24,19 @@ body {
   flex-basis: 4rem;
   padding: 2em 0;
   margin: 1em 0;
-  min-height: 1em;
 }
 
 .letter {
-  background-color: white;
-  width: 90vw;
+  background-color: #FAFAFA;
+  border-radius: 8px;
+  width: 88vw;
   color: #222222;
   padding: 1em 2em;
   line-height: 2em;
   max-width: 800px;
   text-align: center;
+  box-sizing: border-box;
+  min-width: 300px;
 }
 
 @media (max-width: 480px) {
@@ -41,7 +44,6 @@ body {
     padding: 0.5em 1em;
   }
 }
-
 
 .letter p {
   margin: 2em 0;
@@ -70,10 +72,14 @@ h1.animate {
   animation: boing 1s ease-in-out 0s 1;
 }
 
+body.animate {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
 h2 {
-  font-family: 'Montserrat'
   font-size: 2.5rem;
-  line-height: 1emx;
+  line-height: 1em;
   letter-spacing: -0.5px;
   color: #231f20;
   font-weight: 700;
@@ -96,6 +102,10 @@ h2 {
 
 footer {
   padding: 2em;
+}
+
+footer a {
+  text-decoration: none;
 }
 
 @keyframes boing {

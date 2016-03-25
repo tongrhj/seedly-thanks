@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./index.css" media="screen" title="no title" charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <div id="fb-root"></div>
@@ -45,13 +46,14 @@
       <p>That's all. Serious!</p>
       <p>Your bank and credit card statements are being encrypted right now. Expect our report in your inbox within the next <strong>3 days</strong>. Till then...</p>
       <h2>Like us on Facebook?</h2>
-      <div class="fb-page" data-href="https://www.facebook.com/seedlysg" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/seedlysg"><a href="https://www.facebook.com/seedlysg">Seedly</a></blockquote></div></div>
+      <div class="fb-page" data-href="https://www.facebook.com/seedlysg" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" style="margin: 1em 0.5em;"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/seedlysg"><a href="https://www.facebook.com/seedlysg">Seedly</a></blockquote></div></div>
     </div>
     <footer>
-      <img src="img/stamp.png" style="width:16px;height:21px;">
+      <a href="http://seedly.sg"><img src="img/stamp.png" style="width:16px;height:21px;"></a>
     </footer>
     <script type="text/javascript">
       function delayAnimation() {
+        document.body.classList.add('animate')
         Array.from(document.querySelectorAll('.fa-star')).forEach(function(elm) {
           elm.classList.add('fa')
         })
