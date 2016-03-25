@@ -26,6 +26,21 @@ body {
   margin: 1em 0;
 }
 
+.error header {
+  width: 100vw;
+  flex-basis: 4rem;
+  padding: 2em 0;
+  margin: 1em 0;
+}
+
+.gold {
+  color: gold;
+}
+
+.dull {
+  background-color: #222222;
+}
+
 .letter {
   background-color: #FAFAFA;
   border-radius: 8px;
@@ -39,7 +54,40 @@ body {
   min-width: 300px;
 }
 
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  border: 1px solid #55ccfc;
+  height: 20px;
+  line-height: 20px;
+  color: #55ccfc;
+  -webkit-border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 5px;
+  -moz-background-clip: padding;
+  border-radius: 5px;
+  background-clip: padding-box;
+  font-size: 1em;
+  padding: .5em 1.5em;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  background: transparent;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  cursor: pointer;
+  zoom: 1;
+  -webkit-backface-visibility: hidden;
+  position: relative;
+}
+
 @media (max-width: 480px) {
+  .error header h1 {
+      font-size: 2rem;
+  }
+
   .letter {
     padding: 0.5em 1em;
   }
