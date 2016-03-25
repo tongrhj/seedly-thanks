@@ -28,21 +28,33 @@ body {
 
 .letter {
   background-color: white;
-  min-width: 400px;
+  width: 90vw;
   color: #222222;
   padding: 1em 2em;
   line-height: 2em;
   max-width: 800px;
   text-align: center;
 }
+
+@media (max-width: 480px) {
+  .letter {
+    padding: 0.5em 1em;
+  }
+}
+
+
 .letter p {
   margin: 2em 0;
 }
 
-h1 {
+h1, h2 {
   font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
   font-size: 4rem;
   line-height: 1em;
+  letter-spacing: -1px;
   min-height: 1em;
   font-weight: 800;
   z-index: 2;
@@ -59,8 +71,12 @@ h1.animate {
 }
 
 h2 {
-  position: relative;
-  visibility: none;
+  font-family: 'Montserrat'
+  font-size: 2.5rem;
+  line-height: 1emx;
+  letter-spacing: -0.5px;
+  color: #231f20;
+  font-weight: 700;
 }
 
 .text-bg {
@@ -76,6 +92,10 @@ h2 {
 
 .text-bg.fa.fa-star {
   visibility: visible;
+}
+
+footer {
+  padding: 2em;
 }
 
 @keyframes boing {
