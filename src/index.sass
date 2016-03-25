@@ -54,11 +54,14 @@ h1
   min-height: 1em
   font-weight: 800
   z-index: 2
-  @include animation(boing 1s ease-in-out 0s 1)
   padding: 0
   margin: 0 auto
   transform-origin: 50% 50%
   text-align: center
+
+h1.animate {
+  @include animation(boing 1s ease-in-out 0s 1)
+}
 
 h2
   position: relative
@@ -72,6 +75,10 @@ h2
   top: 40%
   z-index: 1
   font-size: 24px
+  visibility: hidden
+
+.text-bg.fa.fa-star
+  visibility: visible
 
 @keyframes boing
   0%
@@ -82,7 +89,7 @@ h2
 // Indebted to: http://advancedsass.com/articles/simplify-animation-keyframes-with-unique-id.html
 @for $i from 1 through 5
   .fa.fa-star:nth-of-type(#{$i})
-    @include animation(0.5s + (0.1 * $i * random(5)) ease-in-out 0s 1 forwards)
+    @include animation(1s + (0.1 * $i * random(5)) ease-in-out 0s 1 forwards)
     @include transform(scale(random(10) * $i * 0.1))
     @include animation-keyframes
       0%
@@ -94,7 +101,7 @@ h2
 
 @for $i from 6 through 10
   .fa.fa-star:nth-of-type(#{$i})
-    @include animation(0.5s + (0.1 * $i * random(5)) ease-in-out 0s 1 forwards)
+    @include animation(1s + (0.1 * $i * random(5)) ease-in-out 0s 1 forwards)
     @include transform(scale(random(10) * $i * 0.1))
     @include animation-keyframes
       0%
@@ -106,7 +113,7 @@ h2
 
 @for $i from 11 through 15
   .fa.fa-star:nth-of-type(#{$i})
-    @include animation(0.1s + (0.1 * $i/2 * random(5)) ease-in-out 0s 1 forwards)
+    @include animation(1s + (0.1 * $i/2 * random(5)) ease-in-out 0s 1 forwards)
     @include transform(scale(random(10) * $i * 0.1))
     @include animation-keyframes
       0%
@@ -118,7 +125,7 @@ h2
 
 @for $i from 16 through 20
   .fa.fa-star:nth-of-type(#{$i})
-    @include animation(0.1s + (0.1 * $i/2 * random(5)) ease-in-out 0s 1 forwards)
+    @include animation(1s + (0.1 * $i/2 * random(5)) ease-in-out 0s 1 forwards)
     @include transform(scale(random(10) * $i * 0.1))
     @include animation-keyframes
       0%
